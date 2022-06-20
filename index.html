@@ -27,7 +27,7 @@
                 value = +edit_text.value;
                 if(value!=""){
                     let finalcal = value*2.54;
-                    showResult(finalcal);
+                    showResult(finalcal,"0");
 
                 }else{
                     alert("bhai kya kar rha hai tu ! value to daal");
@@ -41,7 +41,7 @@
                 value = +edit_text.value;
                 if(value!=""){
                     let finalcal = value/2.54;
-                    showResult(finalcal);
+                    showResult(finalcal,"1");
 
                 }else{
                     alert("bhai kya kar rha hai tu ! value to daal");
@@ -49,10 +49,17 @@
 
                 }
 
-            function showResult(finalcal){
+            function showResult(finalcal,flag){
 
                 div= document.createElement("div");
-                div.innerHTML = ""+finalcal;
+                if(flag==="0"){
+                    div.innerHTML = ""+finalcal+" cm";
+
+                }else{
+                    div.innerHTML = ""+finalcal+" inches";
+
+                }
+
                 result.appendChild(div);
 
             }
